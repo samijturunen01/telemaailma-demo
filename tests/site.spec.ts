@@ -145,9 +145,10 @@ test.describe('reduced motion', () => {
 
 test.describe('inquiry form (demo)', () => {
   test('validates and never sends', async ({ page }) => {
+    const origin = new URL(test.info().project.use.baseURL!).origin
     const external: string[] = []
     page.on('request', (r) => {
-      if (!r.url().startsWith('http://127.0.0.1:4173')) external.push(r.url())
+      if (!r.url().startsWith(origin)) external.push(r.url())
     })
     await go(page, '/yhteystiedot/?aihe=aurinkosahko')
     await expect(page.getByRole('radio', { name: 'Aurinkosähkö' })).toBeChecked()
