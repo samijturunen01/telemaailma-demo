@@ -63,6 +63,13 @@ try {
     },
   }
 
+  // Preload the two critical Latin font files (display + body) for faster headlines.
+  const assets = await fs.readdir('dist/assets')
+  const fontPreloads = [/^anybody-latin-standard-normal-.*\.woff2$/, /^schibsted-grotesk-latin-wght-normal-.*\.woff2$/]
+    .map((re) => assets.find((f) => re.test(f)))
+    .filter(Boolean)
+    .map((f) => `<link rel="preload" href="${base}assets/${f}" as="font" type="font/woff2" crossorigin />`)
+
   const pages = []
   for (const meta of routes) {
     const route = meta.path
@@ -89,6 +96,7 @@ try {
           }
 
     const head = [
+      ...fontPreloads,
       `<title>${esc(meta.title)}</title>`,
       `<meta name="description" content="${esc(meta.description)}" />`,
       route === '/404' ? '' : `<link rel="canonical" href="${url}" />`,
