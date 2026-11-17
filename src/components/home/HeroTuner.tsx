@@ -377,7 +377,11 @@ export function HeroTuner() {
           <p className="readout text-amber" data-intro data-intro-fade>
             Joensuu · Salpakangas · vuodesta {company.founded}
           </p>
-          <h1 id="hero-title" className="display display-xl mt-6" data-intro>
+          <h1
+            id="hero-title"
+            className="display mt-6 text-[clamp(3rem,1.4rem+7.4vw,5.6rem)] lg:text-[min(8.1vw,8.1rem)]"
+            data-intro
+          >
             <span className="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
               <span className="block" data-h1-line>
                 Taivaalta
