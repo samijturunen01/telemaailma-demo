@@ -1,0 +1,30 @@
+{
+  "nosturi-katto": {
+    "width": 4192,
+    "height": 2356,
+    "widths": [
+      640,
+      960,
+      1440,
+      2048,
+      2800
+    ]
+  },
+  "piirilevy": {
+    "width": 1920,
+    "height": 1311,
+    "widths": [
+      640,
+      1024,
+      1600,
+      1920
+    ]
+  },
+  "iv-kayra": {
+    "width": 730,
+    "height": 528,
+    "widths": [
+      730
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Joensuun Telemaailma Oy – Antennit, ajoneuvoasennukset ja SolarWorks-aurinkosähkö</title>
+    <meta name="description" content="Joensuun Telemaailma Oy myy, asentaa ja huoltaa elektroniikkaa vuodesta 1977: antenni- ja tietoverkkoasennukset, ajoneuvo- ja työkoneasennukset, paikannuslaitteet ja SolarWorks-aurinkosähköjärjestelmät." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0c1312" />
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%BASE_URL%favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <script>
+      ;(function () {
+        var d = document.documentElement
+        d.classList.add('js')
+        try {
+          var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          var p = location.pathname
+          var home = p === '%BASE_URL%' || p === '%BASE_URL%index.html'
+          if (!reduce) {
+            d.classList.add('motion')
+            if (home && !sessionStorage.getItem('tm-intro')) d.classList.add('intro')
+          }
+        } catch (e) {}
+        // Failsafe: never leave content hidden if the application fails to start.
+        setTimeout(function () {
+          if (!window.__tmReady) d.classList.remove('motion', 'intro')
+          if (!window.__tmIntro) d.classList.remove('intro')
+        }, 2600)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
