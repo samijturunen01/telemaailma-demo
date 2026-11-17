@@ -4,7 +4,15 @@ _Last updated: 2026-11-17_
 
 ## Current phase
 
-Phase 12 – Deployment (GitHub Pages). All pages built, tested locally.
+Phase 13 – Handover. Deployed to GitHub Pages via Actions (lint + build + Playwright in CI).
+
+- Repository: https://github.com/samijturunen01/telemaailma-demo
+- Live demo: https://samijturunen01.github.io/telemaailma-demo/
+
+## Performance (local production build, throttled ~200 KB/s, 150 ms RTT, 4× CPU)
+
+LCP ≈ 2.9 s, CLS ≤ 0.03, ~720–820 KB transferred per page (fonts ~200 KB, JS ~173 KB gzip).
+Critical Latin fonts are preloaded.
 
 ## Completed
 
@@ -35,4 +43,5 @@ Allente wording, people's names, the crane photo's client).
 
 ## Next recommended action
 
-Verify live deployment; then customer review of flagged content.
+Customer review of flagged content; commission or license real photography (shop, team,
+installations) – the largest remaining quality lever.
